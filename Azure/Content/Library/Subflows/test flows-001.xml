@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow id="7896347a-d474-4c97-a998-1f4f3613e5f7">
+  <descriptionCdata><![CDATA[7896347a-d474-4c97-a998-1f4f3613e5f7.c2feb225-337e-474c-8ed1-80380492b845.description=<pre>\n\nDisplays a message to the user.\n\nInputs\:\n  message - The message text to display\n  title - The title on the message window. Defaults to "Status message".\n\nResponses\:\n  Always returns success.\n\nExamples\:\n  In order to display the message "Finished" to the user, go to the \n  detail screen for the input named "message" and change the Otherwise option\n  from Prompt User to Use Constant.  Then enter the text "Finished" into the\n  Constant Value field.\n\n  References to flow variables in the Contant Value field are expanded so that\n  the text may be dynamic.  Flow variable references are of the form\n  ${variable}.  For example, the text\:\n     ${count} systems were modified \n  could be used to display a message about the number of systems that were\n  repaired, whose value is in the flow variable "count".\n\n  When the message is displayed, it will properly render any embedded html\n  tags, which permits creating messages with more advanced formatting.  For \n  example to display a message in italics you could use\:\n    <i>This is important</i>\n  or to display a message in red\:\n    <i>This is <span style\="color\: red">really </span> important</i>\n\n  You can create messages that contain multiple lines by entering a multiple\n  line message in the Constant Value field, or by using HTML <BR> tags for line\n  breaks.  Note that \\n characters are displayed literally and are not used for\n  creating multiple lines.\n\n</pre>\n
+]]></descriptionCdata>
+  <annotation></annotation>
+  <name>test flows-001</name>
+  <categories/>
+  <inputs/>
+  <possibleResponses>
+    <opResponse id="56e6cc52-7781-4e37-884a-968f17296d78">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules/>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <resultExpression id="050bb768-7abf-4b81-9c90-4e2b37efa4b3">
+    <annotation></annotation>
+    <name>FailureMessage</name>
+    <fieldName>FailureMessage</fieldName>
+    <sourceType>RAWRESULT</sourceType>
+    <filters/>
+  </resultExpression>
+  <iconSpec id="3cfe0aef-a031-4c3c-bd11-e47df674ed3e">
+    <baseIcon>flow.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <callouts/>
+  <checkPointFlow>true</checkPointFlow>
+  <compatibleRuntimeContext>false</compatibleRuntimeContext>
+  <historyCheckPointFlow>true</historyCheckPointFlow>
+  <steps>
+    <step id="c2feb225-337e-474c-8ed1-80380492b845">
+      <annotation>7896347a-d474-4c97-a998-1f4f3613e5f7.c2feb225-337e-474c-8ed1-80380492b845.description</annotation>
+      <name>Display Message</name>
+      <bounds>
+        <x>180.0</x>
+        <y>60.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="5c7f3906-8a78-4d83-b20d-00fe6b881e41">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>message</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+        <staticBinding id="069f79a6-d8dd-46f5-a0d4-8608d3ca3473">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>title</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>Status message</value>
+          <record>false</record>
+        </staticBinding>
+      </bindings>
+      <transitions>
+        <transition id="1ddcc38d-43d7-41ee-80f4-b459bf890a13">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>8faff39d-bca1-43f2-b210-44765706c840</refId>
+          </destination>
+          <source>
+            <refId>c2feb225-337e-474c-8ed1-80380492b845</refId>
+          </source>
+          <positions>
+            <point>
+              <x>200.0</x>
+              <y>214.0</y>
+            </point>
+            <point>
+              <x>500.0</x>
+              <y>124.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>434e6fa2-26bc-4e84-9e1f-0aa6946cf920</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
+    <returnStep id="8faff39d-bca1-43f2-b210-44765706c840">
+      <annotation></annotation>
+      <name>Resolved : success</name>
+      <bounds>
+        <x>450.0</x>
+        <y>90.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings/>
+      <transitions>
+        <transition id="010d0bd7-1a3b-4d04-9cd4-8d5b67f9a48c">
+          <annotation></annotation>
+          <name>return</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>8faff39d-bca1-43f2-b210-44765706c840</refId>
+          </destination>
+          <source>
+            <refId>8faff39d-bca1-43f2-b210-44765706c840</refId>
+          </source>
+          <positions/>
+        </transition>
+      </transitions>
+      <properties/>
+      <returnStepType>RESOLVED</returnStepType>
+      <assignments/>
+    </returnStep>
+  </steps>
+  <startSteps>c2feb225-337e-474c-8ed1-80380492b845</startSteps>
+</flow>
